@@ -66,14 +66,16 @@ public class Employee implements Comparable<Employee>{
 
     @Override
     public int compareTo(Employee o) {
-        return this.getName().compareTo(o.getName());
+        return (int) (this.salary - o.salary);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Employee employee)) return false;
-        return getId() == employee.getId() && Double.compare(employee.getSalary(), getSalary()) == 0 && Objects.equals(getName(), employee.getName()) && Objects.equals(getDepartament(), employee.getDepartament());
+        if (o == null) return false;
+        Employee employee = (Employee)o;
+        return id == employee.getId() && Double.compare(employee.getSalary(), salary) == 0 && Objects.equals(name,
+                employee.getName()) && Objects.equals(departament, employee.getDepartament());
     }
 
     @Override
