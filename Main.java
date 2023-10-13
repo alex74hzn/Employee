@@ -11,22 +11,21 @@ public class Main {
         IdComparator idComparator = new IdComparator();
         NameComparator nameComparator = new NameComparator();
         DepartmentComparator departmentComparator = new DepartmentComparator();
-        Collections.sort(company.getEmployees(),idComparator);
-        for(Employee e:company.getEmployees()) {
-            System.out.println(e.toString());
+        company.getEmployees().sort(idComparator);
+        for(Employee employee:company.getEmployees()) {
+            System.out.println(employee.toString());
         }
         System.out.println();
 
-        Collections.sort(company.getEmployees(),nameComparator);
-        for(Employee e:company.getEmployees()) {
-            System.out.println(e.toString());
+        company.getEmployees().sort(nameComparator);
+        for(Employee employee:company.getEmployees()) {
+            System.out.println(employee.toString());
         }
         System.out.println();
 
-        Collections.sort(company.getEmployees(),departmentComparator);
-        for(Employee e:company.getEmployees()) {
-            System.out.println(e.toString());
+        company.getEmployees().sort(departmentComparator);
+        for(Employee employee:company.getEmployees()) {
+            System.out.println(employee.toString());
         }
-        System.out.println();
     }
 }
